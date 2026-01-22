@@ -27,6 +27,40 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* Snow Effect */
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #ffffff;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    opacity: 0.8;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100px) rotate(360deg);
+        opacity: 0.3;
+    }
 }
 
 a {
@@ -68,6 +102,16 @@ ul {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    text-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+}
+
+.logo.snowing {
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.8), 0 0 40px rgba(139, 92, 246, 0.6);
 }
 
 .logo .dot {
@@ -84,10 +128,37 @@ ul {
     font-weight: 500;
     font-size: 0.95rem;
     color: var(--text-secondary);
+    position: relative;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--text-primary);
+}
+
+.nav-links a.active {
+    color: var(--accent-blue);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    border-radius: 1px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 .nav-links .btn-primary {
