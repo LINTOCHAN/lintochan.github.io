@@ -631,6 +631,33 @@ ul {
     margin-bottom: 1rem;
     border-left: 3px solid var(--accent-purple);
     padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.proficiency {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: auto;
+    border: 1px solid;
+}
+
+.proficiency.expert {
+    background: rgba(14, 165, 233, 0.15);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+.proficiency.intermediate {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--accent-purple);
+    border-color: var(--accent-purple);
 }
 
 .skill-tags {
@@ -831,7 +858,31 @@ ul {
 .role-meta i {
     font-size: 0.8rem;
     color: var(--accent-blue);
+    margin-right: 0.3rem;
 }
+
+.role-achievements {
+    list-style: none;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.role-achievements li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    line-height: 1.5;
+}
+
+.role-achievements li:before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+
 
 /* Contact */
 .contact-section {
@@ -885,6 +936,16 @@ ul {
 
 .contact-btn i {
     font-size: 1.2rem;
+}
+
+.resume-btn {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(139, 92, 246, 0.2));
+    border: 1px solid var(--accent-blue);
+}
+
+.resume-btn:hover {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.3), rgba(139, 92, 246, 0.3));
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
 }
 
 /* Footer */

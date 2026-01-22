@@ -6,6 +6,22 @@ AOS.init({
     offset: 50
 });
 
+// Resume Download Handler
+const resumeBtn = document.getElementById('resume-download');
+if (resumeBtn) {
+    resumeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Replace 'Linto_Sebastian_Resume.pdf' with your actual resume file path
+        const resumeUrl = 'Linto_Sebastian_Resume.pdf';
+        const link = document.createElement('a');
+        link.href = resumeUrl;
+        link.download = 'Linto_Sebastian_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+}
+
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
